@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lab_1</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_world">Hello World!</string>
+    <string name="modified_text">This is the modified text after Hello World!</string>
+
+    <string name="lorem_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris volutpat, dolor id interdum ullamcorper.</string>
+
+    <string name="left_align">Left Aligned Text</string>
+    <string name="right_align">Right Aligned Text</string>
+    <string name="center_align">Center Aligned Text</string>
+    <string name="justified_align">Justified Text: This text is justified to demonstrate how it fills the entire width of the container by adjusting spacing between words.</string>
+</resources>
