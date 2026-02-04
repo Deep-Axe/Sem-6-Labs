@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Android Versions"
+        android:textSize="24sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnAndroid12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android 12 (S)" />
+
+    <Button
+        android:id="@+id/btnAndroid13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android 13 (Tiramisu)" />
+
+    <Button
+        android:id="@+id/btnAndroid14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Android 14 (Upside Down Cake)" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>
