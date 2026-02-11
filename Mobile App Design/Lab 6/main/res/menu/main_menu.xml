@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Icon-based menu items (Requirement b) -->
+    <item
+        android:id="@+id/menu_homepage"
+        android:icon="@drawable/ic_home"
+        android:title="Homepage"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_about_us"
+        android:icon="@drawable/ic_info"
+        android:title="About Us"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_contact_us"
+        android:icon="@drawable/ic_call"
+        android:title="Contact US"
+        app:showAsAction="ifRoom" />
+
+    <!-- Text-based menu items (Requirement a) -->
+    <item
+        android:id="@+id/menu_workout_plans"
+        android:title="Workout Plans"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_trainers"
+        android:title="Trainers"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_membership"
+        android:title="Membership"
+        app:showAsAction="never" />
+</menu>
