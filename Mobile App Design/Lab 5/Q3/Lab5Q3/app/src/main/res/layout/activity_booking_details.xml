@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Booking Confirmation"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <TableRow android:layout_marginBottom="8dp">
+            <TextView android:text="Movie: " android:textStyle="bold" android:textSize="18sp"/>
+            <TextView android:id="@+id/tvMovieDetail" android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="8dp">
+            <TextView android:text="Theatre: " android:textStyle="bold" android:textSize="18sp"/>
+            <TextView android:id="@+id/tvTheatreDetail" android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="8dp">
+            <TextView android:text="Date: " android:textStyle="bold" android:textSize="18sp"/>
+            <TextView android:id="@+id/tvDateDetail" android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="8dp">
+            <TextView android:text="Time: " android:textStyle="bold" android:textSize="18sp"/>
+            <TextView android:id="@+id/tvTimeDetail" android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="8dp">
+            <TextView android:text="Type: " android:textStyle="bold" android:textSize="18sp"/>
+            <TextView android:id="@+id/tvTypeDetail" android:textSize="18sp"/>
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="8dp">
+            <TextView android:text="Seats: " android:textStyle="bold" android:textSize="18sp"/>
+            <TextView android:id="@+id/tvSeatsDetail" android:textSize="18sp" android:text="45 Available"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Back to Home" />
+
+</LinearLayout>

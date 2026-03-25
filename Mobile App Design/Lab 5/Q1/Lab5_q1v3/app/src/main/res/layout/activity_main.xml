@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vehicle Parking Registration"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Input Form (View 1) -->
+        <LinearLayout
+            android:id="@+id/inputForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Vehicle Type:"/>
+
+            <Spinner
+                android:id="@+id/vehicleTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:minHeight="48dp"
+                android:entries="@array/vehicle_types"/>
+
+            <EditText
+                android:id="@+id/vehicleNumberEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vehicle Number"
+                android:inputType="textCapCharacters"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/rcNumberEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="RC Number"
+                android:inputType="textCapCharacters"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
+        </LinearLayout>
+
+        <!-- Confirmation View (View 2) -->
+        <LinearLayout
+            android:id="@+id/confirmationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Registration Details"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/displayVehicleType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type: "
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/displayVehicleNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Number: "
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/displayRcNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RC Number: "
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Buttons shown BEFORE confirmation -->
+            <LinearLayout
+                android:id="@+id/preConfirmButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/editBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Edit"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/confirmBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Confirm"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Button shown AFTER confirmation -->
+            <Button
+                android:id="@+id/backToStartBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Back to Registration"
+                android:visibility="gone"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

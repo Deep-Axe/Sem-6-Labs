@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab8Q1</string>
+    <string-array name="priority_levels">
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+</resources>

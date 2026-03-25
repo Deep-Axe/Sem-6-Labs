@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Name" />
+
+    <EditText
+        android:id="@+id/etItemCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Cost"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnAddItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Item to DB" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Select Item:" />
+
+    <Spinner
+        android:id="@+id/spinnerItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Selected to Total" />
+
+    <TextView
+        android:id="@+id/tvTotalCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total Cost: 0.0"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

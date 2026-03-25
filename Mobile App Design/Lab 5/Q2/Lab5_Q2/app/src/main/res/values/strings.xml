@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Travel Ticket Booking</string>
+    <string name="source_label">Source:</string>
+    <string name="destination_label">Destination:</string>
+    <string name="date_label">Date of Travel:</string>
+    <string name="one_way">One-way</string>
+    <string name="round_trip">Round-trip</string>
+    <string name="submit">Submit</string>
+    <string name="reset">Reset</string>
+    <string name="booking_details">Booking Details</string>
+
+    <string-array name="cities">
+        <item>Mumbai</item>
+        <item>Delhi</item>
+        <item>Bangalore</item>
+        <item>Chennai</item>
+        <item>Kolkata</item>
+        <item>Hyderabad</item>
+        <item>Pune</item>
+    </string-array>
+</resources>

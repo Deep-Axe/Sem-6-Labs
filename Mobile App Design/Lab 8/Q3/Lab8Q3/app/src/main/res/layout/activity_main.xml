@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie Review App"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/et_movie_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Movie Name" />
+
+        <EditText
+            android:id="@+id/et_movie_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Year"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/et_movie_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rating (1-5)"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Review"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Movies"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ListView
+            android:id="@+id/lv_movies"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie Details"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TableLayout
+            android:id="@+id/tl_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:background="#DDDDDD"
+            android:padding="2dp">
+
+            <TableRow android:background="#FFFFFF" android:padding="4dp">
+                <TextView android:text="Name: " android:textStyle="bold"/>
+                <TextView android:id="@+id/tv_detail_name" android:text=""/>
+            </TableRow>
+
+            <TableRow android:background="#FFFFFF" android:padding="4dp" android:layout_marginTop="1dp">
+                <TextView android:text="Year: " android:textStyle="bold"/>
+                <TextView android:id="@+id/tv_detail_year" android:text=""/>
+            </TableRow>
+
+            <TableRow android:background="#FFFFFF" android:padding="4dp" android:layout_marginTop="1dp">
+                <TextView android:text="Rating: " android:textStyle="bold"/>
+                <TextView android:id="@+id/tv_detail_rating" android:text=""/>
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>

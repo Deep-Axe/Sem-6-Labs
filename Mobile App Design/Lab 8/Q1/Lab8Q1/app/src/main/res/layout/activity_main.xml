@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task Name" />
+
+    <EditText
+        android:id="@+id/etDueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Due Date (e.g., 2023-12-31)"
+        android:focusable="false"
+        android:clickable="true" />
+
+    <Spinner
+        android:id="@+id/spinnerPriority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/priority_levels" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Task" />
+
+    <ListView
+        android:id="@+id/listViewTasks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
