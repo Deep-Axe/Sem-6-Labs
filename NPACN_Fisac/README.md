@@ -27,8 +27,14 @@ make
 python3 simulator/device_sim.py --port 8080
 ```
 
-### 4. Open the dashboard
-Open `client/index.html` in your web browser.
+### 4. Serve the HTTP server
+```bash
+cd client
+python3 -m http.server 3000
+```
+
+### 5. Open the dashboard
+Open `http://localhost:3000/?port=8080` in your web browser.
 
 ## Credentials
 - **Username:** `admin`
