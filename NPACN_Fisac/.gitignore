@@ -1,0 +1,29 @@
+Agentic_Workflow/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build and binary artifacts
+*.o
+*.out
+*.so
+*.a
+*.exe
+server/server
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/

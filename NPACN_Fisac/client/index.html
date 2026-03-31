@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHome Controller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-active">
+
+  <!-- Login Screen -->
+  <div id="login-screen" class="view">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>SmartHome</h1>
+        <p>Controller Dashboard</p>
+      </div>
+
+      <div id="conn-indicator" class="conn-pill disconnected">
+        <span class="conn-dot"></span> <span class="conn-text">Connecting...</span>
+      </div>
+
+      <div class="field">
+        <label>Username</label>
+        <input id="username" type="text" value="admin" autocomplete="username">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input id="password" type="password" value="admin123" autocomplete="current-password">
+      </div>
+
+      <button id="login-btn" onclick="login()">Sign In</button>
+      <p id="login-error" class="error-text"></p>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="view hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-name">SmartHome</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button id="nav-devices" class="nav-btn active" onclick="showTab('devices')">Devices</button>
+        <button id="nav-log" class="nav-btn" onclick="showTab('log')">Activity Log</button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div id="dash-conn-pill" class="conn-pill connected">
+          <span class="conn-dot"></span> <span>Live</span>
+        </div>
+        <button class="btn-signout" onclick="logout()">Sign Out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- Devices tab -->
+      <div id="tab-devices" class="tab">
+        <div class="page-hdr">
+          <div>
+            <h2>Devices</h2>
+            <p class="page-sub">Monitor and control your connected devices</p>
+          </div>
+          <button class="btn-add" onclick="openAddModal()">Add Device</button>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <span class="stat-num" id="stat-total">0</span>
+            <span class="stat-lbl">Total</span>
+          </div>
+          <div class="stat-card green">
+            <span class="stat-num" id="stat-online">0</span>
+            <span class="stat-lbl">Online</span>
+          </div>
+          <div class="stat-card red">
+            <span class="stat-num" id="stat-offline">0</span>
+            <span class="stat-lbl">Offline</span>
+          </div>
+        </div>
+
+        <div id="device-grid" class="device-grid"></div>
+      </div>
+
+      <!-- Activity Log tab -->
+      <div id="tab-log" class="tab hidden">
+        <div class="page-hdr">
+          <div>
+            <h2>Activity Log</h2>
+            <p class="page-sub">Last 20 events across all devices</p>
+          </div>
+        </div>
+        <div class="log-wrap">
+          <table class="log-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>User</th>
+                <th>Device</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="log-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Device Modal -->
+  <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModalIfBackdrop(event)">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeAddModal()">Cancel</button>
+      <h3>Register Device</h3>
+      <p class="modal-sub">Manually commission a new device.</p>
+
+      <div class="field">
+        <label>Device ID</label>
+        <input id="new-device-id" type="text" placeholder="e.g. living_room_light">
+      </div>
+
+      <div class="field">
+        <label>Device Type</label>
+        <input id="new-device-type" type="text" list="device-types-list" placeholder="e.g. light">
+        <datalist id="device-types-list">
+          <option value="light">
+          <option value="fan">
+          <option value="camera">
+          <option value="thermostat">
+          <option value="smart_lock">
+          <option value="ac">
+          <option value="heater">
+          <option value="tv">
+          <option value="speaker">
+          <option value="sensor">
+        </datalist>
+      </div>
+
+      <div class="field">
+        <label>Initial State</label>
+        <select id="new-device-state">
+          <option value="off">off</option>
+          <option value="on">on</option>
+          <option value="inactive">inactive</option>
+          <option value="active">active</option>
+        </select>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-register" onclick="registerDevice()">Register</button>
+      </div>
+      <p id="modal-error" class="error-text"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
