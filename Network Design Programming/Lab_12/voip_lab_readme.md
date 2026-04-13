@@ -72,6 +72,8 @@ Router0#write memory
 
 **Step 3:** Configure Switch voice VLAN:
 
+Double Check Ethernet connections, since 0/1 would usually be put to router giving IP phone 0/2 and 0/3
+
 ```
 Switch>enable
 Switch#configure terminal
