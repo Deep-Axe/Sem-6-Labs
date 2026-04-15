@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assign Reviewer:"/>
+        <Spinner
+            android:id="@+id/spinnerReviewer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/reviewers"/>
+
+        <TextView
+            android:id="@+id/tvConfidence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confidence Score: 5"
+            android:layout_marginTop="20dp"/>
+        <SeekBar
+            android:id="@+id/seekBarConfidence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="5"
+            android:min="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Similar Past Papers (Long press for options):"
+            android:textStyle="italic"
+            android:layout_marginTop="20dp"/>
+        <ListView
+            android:id="@+id/lvSimilarPapers"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#e8e8e8"/>
+
+        <Button
+            android:id="@+id/btnAssignFinalize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assign &amp; Finalize"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+</ScrollView>

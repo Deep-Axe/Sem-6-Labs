@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Conference Submission</string>
+    <string-array name="domains">
+        <item>AI/ML</item>
+        <item>Cybersecurity</item>
+        <item>Networks</item>
+        <item>IoT</item>
+        <item>Bioinformatics</item>
+    </string-array>
+    <string-array name="tracks">
+        <item>Track A: Foundations</item>
+        <item>Track B: Applications</item>
+        <item>Track C: Industry</item>
+    </string-array>
+    <string-array name="reviewers">
+        <item>Dr. Alice Smith</item>
+        <item>Prof. Bob Johnson</item>
+        <item>Dr. Charlie Brown</item>
+        <item>Prof. David Wilson</item>
+        <item>Dr. Eve Adams</item>
+    </string-array>
+</resources>

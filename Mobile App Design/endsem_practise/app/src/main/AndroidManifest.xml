@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PickerActivity" android:label="Pick Submission" />
+        <activity android:name=".AuthorDetailsActivity" android:label="New Submission" />
+        <activity android:name=".SchedulingActivity" android:label="Scheduling" />
+        <activity android:name=".ReviewActivity" android:label="Review Submission" />
+        <activity android:name=".ReviewerAssignmentActivity" android:label="Reviewer Assignment" />
+        <activity android:name=".FinalSummaryActivity" android:label="Final Summary" />
+        <activity android:name=".ViewAllActivity" android:label="All Submissions" />
+
+    </application>
+</manifest>
