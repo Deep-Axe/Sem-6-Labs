@@ -9,8 +9,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "ConferenceDB";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4; // Incremented version to 4
 
+    // Users Table
+    public static final String TABLE_USERS = "users";
+    public static final String COL_USER_ID = "id";
+    public static final String COL_USERNAME = "username";
+    public static final String COL_PASSWORD = "password";
+
+    // Papers Table
     public static final String TABLE_NAME = "papers";
     public static final String COL_ID = "id";
     public static final String COL_AUTHOR = "author_name";
@@ -32,7 +39,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " + TABLE_NAME + " (" +
+        String createUsersTable = "CREATE TABLE " + TABLE_USERS + " (" +
+                COL_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_USERNAME + " TEXT UNIQUE, " +
+                COL_PASSWORD + " TEXT)";
+        db.execSQL(createUsersTable);
+
+        String createPapersTable = "CREATE TABLE " + TABLE_NAME + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_AUTHOR + " TEXT, " +
                 COL_EMAIL + " TEXT, " +
@@ -46,20 +59,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_REVIEWER + " TEXT, " +
                 COL_CONFIDENCE + " INTEGER, " +
                 COL_CO_AUTHORS_DATA + " TEXT)";
-        db.execSQL(createTable);
+        db.execSQL(createPapersTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 2) {
-            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN co_author_name TEXT");
-            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN co_author_role TEXT");
-        }
-        if (oldVersion < 3) {
-            db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD COLUMN " + COL_CO_AUTHORS_DATA + " TEXT");
+        if (oldVersion < 4) {
+            String createUsersTable = "CREATE TABLE " + TABLE_USERS + " (" +
+                    COL_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    COL_USERNAME + " TEXT UNIQUE, " +
+                    COL_PASSWORD + " TEXT)";
+            db.execSQL(createUsersTable);
         }
     }
 
+    // User Methods
+    public long signupUser(String username, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_USERNAME, username);
+        values.put(COL_PASSWORD, password);
+        return db.insert(TABLE_USERS, null, values);
+    }
+
+    public boolean loginUser(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_USERS + " WHERE " + COL_USERNAME + "=? AND " + COL_PASSWORD + "=?", new String[]{username, password});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
+    // Paper Methods
     public long insertPaper(String author, String email, String title, String type, String domain, String coAuthorsData) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -118,5 +149,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void clearAll() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
+        db.execSQL("DELETE FROM " + TABLE_USERS);
     }
 }
